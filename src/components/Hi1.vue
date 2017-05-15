@@ -1,7 +1,6 @@
 <template>
   <div>
-    <span>我是Hi页面</span>
-    <router-view></router-view>
+    <span>我是Hi1页面</span>
   </div>
 </template>
 

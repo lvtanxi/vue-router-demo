@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <router-link to="Hi">去Hi页面</router-link>
+    {{msg}}
   </div>
 </template>
 

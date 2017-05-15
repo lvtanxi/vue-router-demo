@@ -1,7 +1,6 @@
 <template>
   <div>
-    <span>我是Hi页面</span>
-    <router-view></router-view>
+    <p>{{$route.name}}</p>
   </div>
 </template>
 
@@ -11,5 +10,9 @@
       return {}
     },
     props: {},
+    components: {},
+    methods: {},
+    created: function () {
+    }
   }
 </script>
