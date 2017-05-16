@@ -41,6 +41,14 @@ export default new Router({
       path: '/paramsParam',
       name: 'paramsParam',
       component: ParamsParam
+    },
+       {
+      path: '/jspang',
+      components: {
+        default: Hi1,
+        left: Hi2,
+        right: Hello
+      }
     }
   ]
 })
