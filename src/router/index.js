@@ -10,6 +10,7 @@ import UrlParam from '@/components/UrlParam'
 import RedirectTest from '@/components/RedirectTest'
 import AliasJup from '@/components/AliasJup'
 import Error from '@/components/Error'
+import Count from '@/components/Count'
 
 Vue.use(Router);
 /**
@@ -27,10 +28,10 @@ export default new Router({
         left: Hi1,
         right: Hello
       }
-    },{
+    }, {
       path: '/Hi',
       component: Hi,
-      children:[ //这里有一个小坑，子路由不能配置/
+      children: [ //这里有一个小坑，子路由不能配置/
         {
           path: 'hi1',
           component: Hi1
@@ -51,7 +52,7 @@ export default new Router({
       name: 'paramsParam',
       component: ParamsParam
     },
-       {
+    {
       path: '/jspang',
       components: {
         default: Hi1,
@@ -59,30 +60,33 @@ export default new Router({
         right: Hello
       }
     },
-       {
+    {
       path: '/urlParam/:newsId/:newsTitle', //这可以添加正则表达式
       component: UrlParam,
-      beforeEnter(to,from,next){ //路由钩子函数
-          console.log(to,from)
-          next()  //让跳转继续，需要拦截就在这里处理，也可以传递next(true),next({path:'/'})
+      beforeEnter(to, from, next) { //路由钩子函数
+        console.log(to, from)
+        next()  //让跳转继续，需要拦截就在这里处理，也可以传递next(true),next({path:'/'})
       }
     },
-       {
+    {
       path: '/goRedirectTest',
       component: RedirectTest
-    },{
-      path:'/goRedirect',
-      redirect:'/goRedirectTest'
-    },{
-      path:'/goRedirectParam/:newsId/:newsTitle',
-      redirect:'/urlParam/:newsId/:newsTitle'
-    },{
-      path:'/aliasJup',
-      component:AliasJup,
-      alias:'/lvtanxi'
-    },{
-      path:'*', //404
+    }, {
+      path: '/goRedirect',
+      redirect: '/goRedirectTest'
+    }, {
+      path: '/goRedirectParam/:newsId/:newsTitle',
+      redirect: '/urlParam/:newsId/:newsTitle'
+    }, {
+      path: '/aliasJup',
+      component: AliasJup,
+      alias: '/lvtanxi'
+    }, {
+      path: '*', //404
       component: Error
+    }, {
+      path: '/count', //404
+      component: Count
     }
   ]
 })

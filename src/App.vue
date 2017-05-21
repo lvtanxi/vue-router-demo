@@ -19,6 +19,8 @@
     <router-link to="/lvtanxi">alias别名的使用</router-link>
     <br>
     <router-link to="/169168">404也没测试</router-link>
+    <br/>
+    <router-link to="/count">Vue的使用</router-link>
     <transition enter-active-class="zoomInLeft" leave-active-class="zoomOutRight">
       <router-view class="animated"></router-view>
     </transition>
